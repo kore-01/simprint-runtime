@@ -1,6 +1,8 @@
 # 软件安装索引 / Software Installation Index
-
 > 记录所有已安装软件，方便快速查阅和复装
+
+**文件位置：** `~/.hermes/software_index.md` （主索引）
+**GitHub 备份：** `https://github.com/kore-01/simprint-runtime/blob/main/software_index.md`
 
 最后更新：2026-05-17
 
@@ -23,6 +25,8 @@
 | 11 | 中东市场监测 | Cron定时任务 | 新闻监控 | ✅ 运行中 |
 | 12 | 大宗商品行情 | Cron定时任务 | 行情感知 | ✅ 运行中 |
 | 13 | 五媒体新闻抓取 | Cron定时任务 | 新闻监控 | ✅ 运行中 |
+| 14 | ai-stock-team | AI量化团队 | 多Agent系统 | ✅ 已配置 |
+| 15 | chanlun-kb | 缠论知识库 | Skill | ✅ 已安装 |
 
 ---
 
@@ -30,7 +34,8 @@
 
 ### 1. Simprint Runtime
 **用途：** 指纹浏览器自动化（MCP 服务器）
-**仓库：** https://github.com/kore-01/simprint-runtime
+**GitHub：** https://github.com/kore-01/simprint-runtime
+**本地路径：** `~/.hermes/skills/simprint-integration/`
 
 ```bash
 # 一键安装
@@ -42,8 +47,8 @@ python3 simprint_mcp_server.py  # 启动 MCP 服务器
 ```
 
 **依赖：** chromium-browser, libxdo3, xdotool, xclip
-**配置：** `RUNTIME_BIN` 环境变量指向 `runtime/simprint-runtime`
-**集成：** Hermes MCP servers → simprint 配置
+**环境变量：** `RUNTIME_BIN=~/.hermes/skills/simprint-integration/scripts/simprint_mcp_server.py`
+**集成：** Hermes MCP servers → simprint 配置在 `~/.hermes/config.yaml`
 
 ---
 
@@ -62,7 +67,8 @@ cd ~/.hermes && python3 -m hermes_agent.cli
 ### 3. Bypass Paywalls Clean (BPC)
 **用途：** 绕过 NYT/NPR/BBC 等新闻网站付费墙
 **版本：** v4.3.7.4
-**路径：** `extensions/bypass-paywalls-chrome-clean-master/`
+**路径：** `/tmp/bypass-paywalls/ext-chrome/bypass-paywalls-chrome-clean-master/`（已解压）
+**同步到 GitHub：** `extensions/bypass-paywalls-chrome-clean-master/`
 
 ```bash
 # Chrome 手动加载
@@ -181,6 +187,20 @@ send_message(action='send', message='内容', target='weixin')
 
 ---
 
+### 14. AI量化团队 (ai-stock-team)
+**用途：** A股7人AI量化团队模拟
+**路径：** `~/.hermes/ai-stock-team/`
+**组成：** CEO + 情报 + 技术 + 风控 + 量化 + 执行 + 复盘
+
+---
+
+### 15. 缠论知识库 (chanlun-kb)
+**用途：** 缠论知识库检索 + 股票实时缠论分析
+**路径：** `~/.hermes/chanlun-kb/`
+**Skill：** chanlun-kb（已安装）
+
+---
+
 ## 📦 批量安装命令
 
 在一台新电脑上快速恢复所有环境：
@@ -196,11 +216,10 @@ pip3 install msgpack
 # 3. 安装 Python 库
 pip3 install akshare==1.18.55 tushare msgpack
 
-# 4. 复制配置（如果保留配置备份）
+# 4. 复制配置
 # cp ~/backup/config.yaml ~/.hermes/config.yaml
 
-# 5. 恢复 Cron 任务
-# 在 Hermes 中用 cronjob --list 查看 job_id，然后重新配置
+# 5. 恢复 Cron 任务（在 Hermes 中用 cronjob --list 查看）
 ```
 
 ---
