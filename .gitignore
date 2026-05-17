@@ -1,0 +1,20 @@
+# Build artifacts
+target/
+*.o
+*.so
+
+# Python
+__pycache__/
+*.pyc
+
+# Large binaries (we include runtime/simprint-runtime but exclude other builds)
+# Already included: runtime/simprint-runtime
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,159 @@
+{
+  "Algemeen Dagblad": {
+    "domain": "###_nl_dpg_adr",
+    "group": [
+      "ad.nl",
+      "bd.nl",
+      "bndestem.nl",
+      "destentor.nl",
+      "ed.nl",
+      "gelderlander.nl",
+      "pzc.nl",
+      "tubantia.nl"
+    ],
+    "allow_cookies": 1,
+    "block_regex": "temptation\\.{domain}\\/",
+    "cs_dompurify": 1,
+    "cs_param": {"paywall_sel": "article svg.premium-indicator[class*='article-premium-indicator-']"},
+    "upd_version": "4.3.6.6"
+  },
+  "Brill (removed)": {
+    "domain": "brill.com",
+    "allow_cookies": 1,
+    "nofix": 1,
+    "upd_version": "4.3.6.8"
+  },
+  "Het Laatste Nieuws": {
+    "domain": "hln.be",
+    "allow_cookies": 1,
+    "block_regex": "temptation\\.hln\\.be",
+    "cs_dompurify": 1,
+    "cs_param": {"paywall_sel": "article svg.premium-indicator[class*='article-premium-indicator-']"},
+    "upd_version": "4.3.6.6"
+  },
+  "L'Équipe.fr": {
+    "domain": "lequipe.fr",
+    "allow_cookies": 1,
+    "block_regex": "(\\.poool\\.fr\\/|\\.lequipe\\.fr\\/assets\\/js\\/.*[wW]all.+\\.js)",
+    "cs_dompurify": 1,
+    "cs_param": {"paywall_sel": "article.Article--limited div.Article__paywall"},
+    "upd_version": "4.3.6.1"
+  },
+  "Lance.com.br": {
+    "domain": "lance.com.br",
+    "allow_cookies": 1,
+    "cs_code": "[{\"cond\":\"div.paywall-content\", \"rm_class\":\"h-[550px]\"}, {\"hide_elem\":\"div[class*='backdrop-blur-'],div[style*='repeating-linear-gradient']\"}]",
+    "upd_version": "4.3.6.3"
+  },
+  "Linda.nl": {
+    "domain": "linda.nl",
+    "allow_cookies": 1,
+    "cs_dompurify": 1,
+    "cs_param": {"premium_sel": "div#article div[class$='premiumlabel' i], article.premium-article_container"},
+    "upd_version": "4.3.7.4"
+  },
+  "National Geographic ES": {
+    "domain": "nationalgeographic.com.es",
+    "allow_cookies": 1,
+    "block_regex": "\\.nationalgeographic\\.com\\.es\\/Content\\/js\\/lib\\/runtime\\.min\\.js",
+    "upd_version": "4.3.6.7"
+  },
+  "National Geographic IT": {
+    "domain": "nationalgeographic.it",
+    "allow_cookies": 1,
+    "cs_code": "[{\"cond\":\"section[style]\", \"rm_attrib\":\"style\"}, {\"hide_elem\":\"section.paywall-container\"}]",
+    "upd_version": "4.3.6.5"
+  },
+  "National Geographic NL": {
+    "domain": "nationalgeographic.nl",
+    "allow_cookies": 1,
+    "block_regex": "\\.piano\\.io",
+    "upd_version": "4.3.6.5"
+  },
+  "Piano.io": {
+    "domain": "piano.io",
+    "allow_cookies": 1,
+    "block_regex_general": "\\/xbuilder\\/experience\\/execute",
+    "excluded_domains": ["piano.io", "automobilwoche.de", "frontline.thehindu.com", "hbr.org", "japantimes.co.jp", "nacion.com", "thedispatch.com"],
+    "upd_version": "4.3.7.3"
+  },
+  "Ringier Gruppe": {
+    "domain": "###_ch_ringier",
+    "group": [
+      "beobachter.ch",
+      "blick.ch",
+      "handelszeitung.ch"
+    ],
+    "allow_cookies": 1,
+    "block_regex": "\\.tinypass\\.com",
+    "cs_dompurify": 1,
+    "exception": [{
+        "domain": "blick.ch",
+        "allow_cookies": 1,
+        "block_regex": "\\.tinypass\\.com"
+      }
+    ],
+    "upd_version": "4.3.6.3"
+  },
+  "SPH Media": {
+    "domain": "###_sg_sph_media",
+    "group":  [
+      "businesstimes.com.sg",
+      "straitstimes.com"
+    ],
+    "allow_cookies": 1,
+    "exception": [{
+        "domain": "straitstimes.com",
+        "allow_cookies": 1,
+        "block_js_inline": "\\.straitstimes\\.com\\/opinion\\/",
+        "cs_dompurify": 1
+      }
+    ],
+    "upd_version": "4.3.6.4"
+  },
+  "StatNews": {
+    "domain": "statnews.com",
+    "allow_cookies": 1,
+    "block_regex": "\\.tinypass\\.com",
+    "ld_archive_is": "div.restricted-content-breaker|.the-content|main section, div[style*='counter-reset:']",
+    "cs_block": 1,
+    "upd_version": "4.3.7.1"
+  },
+  "The Dispatch": {
+    "domain": "thedispatch.com",
+    "allow_cookies": 1,
+    "remove_cookies_select_drop": ["xbc"],
+    "upd_version": "4.3.7.3"
+  },
+  "The Economic Times (ET Prime)": {
+    "domain": "###_economictimes",
+    "group": [
+      "economictimes.com",
+      "economictimes.indiatimes.com",
+      "epaper.indiatimes.com"
+    ],
+    "allow_cookies": 1,
+    "block_regex": "apw\\.economictimes\\.indiatimes\\.com",
+    "useragent": "googlebot",
+    "exception": [{
+        "domain": "economictimes.com",
+        "allow_cookies": 1,
+        "useragent": "googlebot",
+        "cs_dompurify": 1
+      }, {
+        "domain": "epaper.indiatimes.com",
+        "allow_cookies": 1
+      }
+    ],
+    "upd_version": "4.3.6.6"
+  },
+  "Vorarlberg Online": {
+    "domain": "vol.at",
+    "allow_cookies": 1,
+    "block_regex": "\\.piano\\.io",
+    "cs_dompurify": 1,
+    "cs_param": {"art_pars_sel": "article div.content-block--wrapper:not(:empty)"},
+    "upd_version_min": "4.3.5.3",
+    "upd_version": "4.3.6.2"
+  }
+}
